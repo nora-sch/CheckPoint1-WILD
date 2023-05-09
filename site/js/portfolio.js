@@ -1,3 +1,4 @@
+// CHANGE AVATAR
 const devAvatar = document.querySelector("#dev-avatar");
 devAvatar.addEventListener("click", (e) => {
   const src = devAvatar.getAttribute("src");
@@ -5,16 +6,17 @@ devAvatar.addEventListener("click", (e) => {
   else devAvatar.src = "./image/avatar-bis.png";
 });
 
+// CHANGE NAME AND COLOR
 const changeNameBtn = document.querySelector("#change-name-btn");
 const nameDiv = document.querySelector("#name");
-// const descriptionDiv = document.querySelector('.description')
 const pinkSections = document.querySelectorAll(".pink-bg");
 const pinkText = document.querySelectorAll(".pink-text");
 const links = document.querySelectorAll("a");
+
 changeNameBtn.addEventListener("click", (e) => {
   const newColor = window.prompt("Enter a Color!", "#750ff7 ");
   const newName = window.prompt("Enter Your Name!");
-  nameDiv.textContent = newName;
+  if (newName !== "") nameDiv.textContent = newName;
   nameDiv.style.color = "white";
   changeNameBtn.style.backgroundColor = newColor;
   pinkSections.forEach((section) => {
@@ -30,8 +32,10 @@ changeNameBtn.addEventListener("click", (e) => {
   });
 });
 
+// CHANGE FRONT SECTION LI
 const modifyBtnFront = document.querySelector("#mod-btn-front");
 const ulToModify = document.querySelector("#front-dev-tools");
+// const liToModify = document.querySelectorAll("#front-dev-tools li");
 
 modifyBtnFront.addEventListener("click", (e) => {
   ulToModify.innerHTML = "";
@@ -40,6 +44,8 @@ modifyBtnFront.addEventListener("click", (e) => {
     "<li>VSCode</li><li>Github</li><li>Terminal</li>"
   );
 });
+
+// CHANGE BACK SECTION LI
 const addDevToolBtn = document.querySelector("#add-dev-tool-btn");
 const addDevToolInput = document.querySelector("#add-dev-tool");
 const targetSection = document.querySelector("#dev-tools");
